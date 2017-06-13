@@ -22,7 +22,7 @@ public class RootEnvironment {
 	 */
 	public RootEnvironment(String configPath, String logConfigPath) {
 		 logger = LoggingPlatform.getInstance(logConfigPath); 
-		 properties = Configurator.getProperties(logConfigPath);
+		 properties = Configurator.getProperties(configPath);
 	}
 
 	public Map<String, Object> getProperties() {

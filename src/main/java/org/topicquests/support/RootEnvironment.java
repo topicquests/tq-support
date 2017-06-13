@@ -50,4 +50,8 @@ public class RootEnvironment {
 		return new Tracer(agentName, logger);
 	}
 
+	public void record(String msg) {
+		logger.record(msg);
+	}
+
 }

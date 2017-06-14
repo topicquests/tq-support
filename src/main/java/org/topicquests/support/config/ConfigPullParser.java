@@ -113,9 +113,9 @@ public class ConfigPullParser {
 				}
 			}
 		} catch (XmlPullParserException var19) {
-			System.out.println("ServerPullParser parser failed " + var19.getMessage());
+			System.out.println("ConfigPullParser parser failed " + var19.getMessage());
 		} catch (IOException var20) {
-			System.out.println("ServerPullParser parser io failure " + var20.getMessage());
+			System.out.println("ConfigPullParser parser io failure " + var20.getMessage());
 		}
 
 	}

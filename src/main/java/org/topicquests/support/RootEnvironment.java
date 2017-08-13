@@ -5,6 +5,7 @@ package org.topicquests.support;
 
 import java.util.Map;
 
+import org.topicquests.support.api.IEnvironment;
 import org.topicquests.support.config.Configurator;
 import org.topicquests.support.util.LoggingPlatform;
 import org.topicquests.support.util.Tracer;
@@ -13,7 +14,7 @@ import org.topicquests.support.util.Tracer;
  * @author jackpark
  *
  */
-public class RootEnvironment {
+public class RootEnvironment implements IEnvironment {
 	private LoggingPlatform logger;
 	private Map<String,Object>properties;
 

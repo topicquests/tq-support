@@ -12,6 +12,7 @@ public class ConfigPullParser {
 	private Map<String, Object> properties = new Hashtable();
 
 	public ConfigPullParser(String configFilePath) {
+		System.out.println("ConfigPullParser "+configFilePath);
 		try {
 			String path = ConfigurationHelper.findPath(configFilePath);
 			File f = new File(path);

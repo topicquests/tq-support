@@ -6,7 +6,8 @@
     <version>1.7-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>tq-support</name>
-    <url>https://github.com/wenzowski/tq-support</url>
+    <description>Simple utility routines used throughout TopicQuests projects.</description>
+    <url>https://github.com/topicquests/tq-support</url>
     <developers>
         <developer>
             <email>jackpark@topicquests.org</email>
@@ -112,7 +113,7 @@
                         <phase>site</phase>
                         <configuration>
                             <repositoryName>tq-support</repositoryName>
-                            <repositoryOwner>wenzowski</repositoryOwner>
+                            <repositoryOwner>topicquests</repositoryOwner>
                             <server>github</server>
                             <message>Building site for my project</message>
                             <path>${site.path}</path>
@@ -289,8 +290,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/wenzowski/tq-support</url>
-        <connection>scm:git:git://github.com/wenzowski/tq-support.git</connection>
+        <url>https://github.com/topicquests/tq-support</url>
+        <connection>scm:git:git://github.com/topicquests/tq-support.git</connection>
     </scm>
     <distributionManagement>
         <snapshotRepository>

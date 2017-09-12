@@ -1,10 +1,10 @@
-TopicQuestsSupport
-==================
+TopicQuests Support [<img src="https://circleci.com/gh/topicquests/tq-support/tree/develop.png?style=shield"/>](https://circleci.com/gh/topicquests/workflows/tq-support)
+===================
 
 Core supporting code for TopicQuests projects
 
-Status: Production<br/>
-Latest edit: 201709
+Status: [Production Release](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.topicquests%22%20AND%20a%3A%22tq-support%22)
+
 ## Background ##
 These are simply utility routines used throughout TopicQuests projects. The project is relatively stable and has been for a long time, so it is now labeled version 1.0.0
 

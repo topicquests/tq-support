@@ -8,9 +8,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SimpleHttpClient {
+	private int TIMEOUT = 1000;
+	
 	public SimpleHttpClient() {
 	}
 
+	public void setTimeout(int t) {
+		TIMEOUT = t;
+	}
+	
 	public IResult put(String url, String queryString) {
 		return this.handle(url, queryString, "POST");
 	}
@@ -27,7 +33,7 @@ public class SimpleHttpClient {
 		try {
 			URL urx = new URL(url + queryString);
 			con = (HttpURLConnection) urx.openConnection();
-			con.setReadTimeout(1000);
+			con.setReadTimeout(TIMEOUT);
 			con.setRequestMethod(mode);
 			con.setDoInput(true);
 			con.setDoOutput(true);

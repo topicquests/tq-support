@@ -13,6 +13,8 @@ public interface IEnvironment {
 
 	Map<String, Object> getProperties();
 	
+	String getStringProperty(String key);
+	
 	void logDebug(String msg);
 	
 	/**
@@ -21,4 +23,6 @@ public interface IEnvironment {
 	 * @param e can be <code>null</code>
 	 */
 	void logError(String msg, Exception e);
+	
+	void shutDown();
 }

@@ -14,7 +14,7 @@ import org.topicquests.support.util.Tracer;
  * @author jackpark
  *
  */
-public class RootEnvironment implements IEnvironment {
+public abstract class RootEnvironment implements IEnvironment {
 	private LoggingPlatform logger;
 	private Map<String,Object>properties;
 
@@ -55,4 +55,6 @@ public class RootEnvironment implements IEnvironment {
 		logger.record(msg);
 	}
 
+	@Override
+	public abstract void shutDown();
 }

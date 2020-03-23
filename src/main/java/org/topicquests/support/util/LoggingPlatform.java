@@ -13,6 +13,14 @@ public class LoggingPlatform {
 	private Logger log;
 
 	protected LoggingPlatform(String loggerPropertiesFilePath) {
+	/**
+		LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+		File file = new File(ConfigurationHelper.findPath(loggerPropertiesFilePath));
+		// this will force a reconfiguration
+		context.setConfigLocation(file.toURI());
+		this.log = LogManager.getLogger(LoggingPlatform.class.getName());
+
+	 */
 		PropertyConfigurator.configure(ConfigurationHelper.findPath(loggerPropertiesFilePath));
 		this.log = Logger.getLogger(LoggingPlatform.class);
 		this.tracers = new ArrayList();

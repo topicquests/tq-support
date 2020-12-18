@@ -20,18 +20,6 @@ package org.topicquests.support.api;
  * @author jackpark
  *
  */
-public interface IResult {
-	boolean hasError();
-
-	String getErrorString();
-
-	void addErrorString(String var1);
-
-	Object getResultObject();
-
-	void setResultObject(Object var1);
-
-	Object getResultObjectA();
-
-	void setResultObjectA(Object var1);
+public interface IRemovableCache {
+	void remove(Object var1);
 }

@@ -16,22 +16,33 @@
 package org.topicquests.support.api;
 
 /**
- * 
  * @author jackpark
- *
+ * <p>A <em>Dynamic Object</em> is one which has
+ * an <em>interestingness</em> value. That value can
+ * change over time</p>
  */
-public interface IResult {
-	boolean hasError();
+public interface IDynamicObject {
+	/** A common JSONObject field or property key*/
+	public static final String
+		INTERESTINGNESS_FIELD	= "interng";
+	
+	/**
+	 * Set an initial {@code value}
+	 * @param value
+	 */
+	void setInterestingess(int value);
+	
+	/**
+	 * Return the current value
+	 * @return
+	 */
+	int getInterestingness();
+	
+	/**
+	 * Submit a delta for the current value;
+	 * {@code value} can be positive or negative
+	 * @param value
+	 */
+	void changeInterestingness(int value);
 
-	String getErrorString();
-
-	void addErrorString(String var1);
-
-	Object getResultObject();
-
-	void setResultObject(Object var1);
-
-	Object getResultObjectA();
-
-	void setResultObjectA(Object var1);
 }

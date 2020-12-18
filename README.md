@@ -16,6 +16,8 @@ Support is provided for:
 - A TextFileHandler with a variety of useful methods
 - A static utility for finding where configuration files are stored; this allows you to put your config files, including logger.properties, into one of: the root directory, or a directory named "config", "conf", or "cfg".
 
+## Build ##
+mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dgpg.skip
 
 ## License ##
 Apache 2

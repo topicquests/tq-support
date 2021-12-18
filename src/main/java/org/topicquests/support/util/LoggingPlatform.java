@@ -15,9 +15,11 @@
  */
 package org.topicquests.support.util;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.spi.LoggerContext;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,16 +34,12 @@ public class LoggingPlatform {
 	private Logger log;
 
 	protected LoggingPlatform(String loggerPropertiesFilePath) {
-	/**
 		LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
 		File file = new File(ConfigurationHelper.findPath(loggerPropertiesFilePath));
 		// this will force a reconfiguration
-		context.setConfigLocation(file.toURI());
+		((org.apache.logging.log4j.core.LoggerContext) context).setConfigLocation(file.toURI());
 		this.log = LogManager.getLogger(LoggingPlatform.class.getName());
 
-	 */
-		PropertyConfigurator.configure(ConfigurationHelper.findPath(loggerPropertiesFilePath));
-		this.log = Logger.getLogger(LoggingPlatform.class);
 		this.tracers = new ArrayList();
 	}
 

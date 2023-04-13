@@ -26,19 +26,15 @@ import java.util.List;
 /**
  * 
  * @author jackpark
- *
+ * <p> This Logger expects to find a "log4j2.xml" file in /src/main/resources</p>
  */
 public class LoggingPlatform {
 	private static LoggingPlatform instance = null;
 	private List<Tracer> tracers;
 	private Logger log;
 
-	protected LoggingPlatform(String loggerPropertiesFilePath) {
-		LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
-		File file = new File(ConfigurationHelper.findPath(loggerPropertiesFilePath));
-		// this will force a reconfiguration
-		((org.apache.logging.log4j.core.LoggerContext) context).setConfigLocation(file.toURI());
-		this.log = LogManager.getLogger(LoggingPlatform.class.getName());
+	protected LoggingPlatform() {
+		log = LogManager.getLogger(LoggingPlatform.class);
 
 		this.tracers = new ArrayList();
 	}
@@ -51,9 +47,9 @@ public class LoggingPlatform {
 		}
 	}
 
-	public static LoggingPlatform getInstance(String loggerPropertiesFilePath) {
+	public static LoggingPlatform getInstance() {
 		if (instance == null) {
-			instance = new LoggingPlatform(loggerPropertiesFilePath);
+			instance = new LoggingPlatform();
 		}
 
 		return instance;

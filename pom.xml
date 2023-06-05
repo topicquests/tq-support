@@ -24,6 +24,7 @@
 		    <configuration>
 		      <additionalparam>-Xdoclint:none</additionalparam>
 		    </configuration>
+            <version>3.5.0</version>
 		  </plugin>
 		</plugins>
 	</build>

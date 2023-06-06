@@ -1,4 +1,4 @@
-TopicQuests Support [<img src="https://circleci.com/gh/topicquests/tq-support/tree/develop.png?style=shield"/>](https://circleci.com/gh/topicquests/workflows/tq-support)
+TopicQuests Support
 ===================
 
 Core supporting code for TopicQuests projects

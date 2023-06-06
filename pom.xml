@@ -69,4 +69,11 @@
         </dependency>
     </dependencies>
     <inceptionYear>2004</inceptionYear>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/topicquests/tq-support</url>
+        </repository>
+  </distributionManagement>
 </project>

@@ -33,8 +33,8 @@ public abstract class RootEnvironment implements IEnvironment {
 	/**
 	 * 
 	 */
-	public RootEnvironment(String configPath, String logConfigPath) {
-		 logger = LoggingPlatform.getInstance(logConfigPath); 
+	public RootEnvironment(String configPath) {
+		 logger = LoggingPlatform.getInstance(); 
 		 properties = Configurator.getProperties(configPath);
 	}
 

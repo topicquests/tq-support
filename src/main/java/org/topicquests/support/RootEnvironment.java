@@ -18,6 +18,7 @@ package org.topicquests.support;
 import java.util.Map;
 
 import org.topicquests.support.api.IEnvironment;
+import org.topicquests.support.config.ConfigPullParser;
 import org.topicquests.support.config.Configurator;
 import org.topicquests.support.util.LoggingPlatform;
 import org.topicquests.support.util.Tracer;
@@ -35,7 +36,10 @@ public abstract class RootEnvironment implements IEnvironment {
 	 */
 	public RootEnvironment(String configPath) {
 		 logger = LoggingPlatform.getInstance(); 
-		 properties = Configurator.getProperties(configPath);
+			 
+			 
+			 ConfigPullParser p = new ConfigPullParser(configPath);
+			 properties = p.getProperties();
 	}
 
 	public Map<String, Object> getProperties() {

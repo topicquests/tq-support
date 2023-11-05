@@ -15,10 +15,7 @@
  */
 package org.topicquests.support.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.spi.LoggerContext;
-
+import org.tinylog.Logger;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -34,9 +31,8 @@ public class LoggingPlatform {
 	private Logger log;
 
 	protected LoggingPlatform() {
-		log = LogManager.getLogger(LoggingPlatform.class);
 
-		this.tracers = new ArrayList();
+		this.tracers = new ArrayList<Tracer>();
 	}
 
 	public static LoggingPlatform getLiveInstance() {
@@ -56,20 +52,20 @@ public class LoggingPlatform {
 	}
 
 	public void logDebug(String msg) {
-		this.log.debug(msg);
+		Logger.debug(msg);
 	}
 
 	public void logError(String msg, Exception e) {
 		if (e == null) {
-			this.log.error(msg);
+			Logger.error(msg);
 		} else {
-			this.log.error(msg, e);
+			Logger.error(msg, e);
 		}
 
 	}
 
 	public void record(String msg) {
-		this.log.info(msg);
+		Logger.info(msg);
 	}
 
 	public Tracer getTracer(String agentName) {
@@ -79,10 +75,10 @@ public class LoggingPlatform {
 	}
 
 	public void shutDown() {
-		Iterator itr = this.tracers.iterator();
+		Iterator<Tracer>itr = this.tracers.iterator();
 
 		while (itr.hasNext()) {
-			((Tracer) itr.next()).shutDown();
+			itr.next().shutDown();
 		}
 
 	}
